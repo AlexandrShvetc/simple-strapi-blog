@@ -18,7 +18,6 @@ export default {
   data() {
     return {
       category: [],
-      array: [],
       currentId: this.$route.params.id,
     };
   },
@@ -32,7 +31,7 @@ export default {
   },
   apollo: {
     category: {
-      query: gql `
+      query: gql`
       query Categories($id: ID!){
       category(id: $id) {
          data {
