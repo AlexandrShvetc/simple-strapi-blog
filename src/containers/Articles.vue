@@ -4,7 +4,7 @@
       <div class="uk-container uk-container-large">
         <h1>Strapi blog</h1>
 
-        <ArticlesList :articles="articles"></ArticlesList>
+        <ArticlesList :articles="posts"></ArticlesList>
       </div>
     </div>
   </div>
@@ -20,21 +20,27 @@ export default {
   },
   data() {
     return {
-      articles: []
+      posts: []
     };
   },
   apollo: {
-    articles: gql`
+    posts: gql`
       query Articles {
-        articles {
-          id
-          title
-          content
-          image {
-            url
-          }
-          category {
-            name
+        posts{
+          data{
+            id
+            attributes{
+              Title
+              Text
+              category{
+                data{
+                  id
+                  attributes{
+                  title
+                  }
+                }
+              }
+            }
           }
         }
       }
