@@ -1,4 +1,8 @@
-> **Warning :warning:**
+
+https://www.figma.com/file/DsDS56O94gsSJ2VcPFWklc/A-blog-template-(Community)?node-id=0%3A1
+
+ 
+> > **Warning :warning:**
 >
 > This starter is deprecated.
 >
