@@ -4,7 +4,7 @@
       <div class="uk-container uk-container-large">
         <h1>{{ category.name }}</h1>
 
-        <ArticlesList :articles="category.articles || []"></ArticlesList>
+        <ArticlesList :articles="myCategory || []"></ArticlesList>
       </div>
     </div>
   </div>
@@ -18,37 +18,47 @@ export default {
   data() {
     return {
       category: [],
-      routeParam: this.$route.params.id
+      array: [],
+      currentId: this.$route.params.id,
     };
   },
   components: {
     ArticlesList
   },
+  computed: {
+    myCategory() {
+      return this.category.data.attributes.posts
+    },
+  },
   apollo: {
     category: {
-      query: gql`
-        query Category($id: ID!) {
-          category(id: $id) {
-            name
-            articles {
-              id
+      query: gql `
+      query Categories($id: ID!){
+      category(id: $id) {
+         data {
+         id
+         attributes{
               title
-              content
-              image {
-                url
+                    posts{
+                        data{
+                          id
+                          attributes{
+                            Text
+                            Title
+                          }
+                        }
+                      }
               }
-              category {
-                id
-                name
-              }
-            }
-          }
-        }
-      `,
+         }
+      }
+      }`,
       variables() {
-        return { id: this.routeParam };
+        return {
+          id: this.currentId,
+        }
       }
     }
-  }
+  },
+
 };
 </script>
