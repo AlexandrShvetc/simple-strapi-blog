@@ -36,7 +36,21 @@ import gql from "graphql-tag";
 export default {
   data() {
     return {
-      posts1: [],
+      posts1: {
+        data: {
+          attributes: {
+            Text: '',
+            Title: '',
+            image: {
+              data: [{
+                attributes: {
+                  url: '',
+                },
+              }],
+            },
+          },
+        },
+      },
       // moment: moment,
       api_url: process.env.VUE_APP_STRAPI_API_URL || "https://cheapdeep-strapiblog.herokuapp.com",
       currentId: this.$route.params.id,

@@ -17,7 +17,29 @@ import gql from "graphql-tag";
 export default {
   data() {
     return {
-      category: [],
+      category: {
+        data: {
+          id:'',
+          attributes: {
+            title: '',
+            posts: {
+              data: [{
+                attributes: {
+                  Text: '',
+                  Title: '',
+                  image: {
+                    data: [{
+                      attributes: {
+                        url: '',
+                      },
+                    }],
+                  },
+                },
+              }],
+            },
+          },
+        },
+      },
       currentId: this.$route.params.id,
     };
   },
