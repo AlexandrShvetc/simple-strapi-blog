@@ -16,7 +16,9 @@
 <!--                class="uk-text-uppercase"-->
 <!--              >-->
 <!--                {{ article.attributes.category.data.attributes.title}}-->
+                <img :src="api_url + article.attributes.image.data[0].attributes.url" alt="">
               </p>
+              
               <p><b>{{ article.attributes.Title }}</b></p>
             </div>
           </div>
@@ -30,7 +32,7 @@
 export default {
   data: function() {
     return {
-      api_url: process.env.VUE_APP_STRAPI_API_URL || "http://localhost:1337",
+      api_url: process.env.VUE_APP_STRAPI_API_URL || "https://cheapdeep-strapiblog.herokuapp.com",
       state: process.env.NODE_ENV
     };
   },

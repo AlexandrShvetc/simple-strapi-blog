@@ -39,7 +39,7 @@ export default {
       posts1: [],
       // moment: moment,
       api_url: process.env.VUE_APP_STRAPI_API_URL || "https://cheapdeep-strapiblog.herokuapp.com",
-      routeParam: this.$route.params.id
+      currentId: this.$route.params.id,
     };
   },
   components: {
@@ -48,8 +48,8 @@ export default {
   apollo: {
     posts1: {
       query: gql`
-        query Posts {
-          posts1(id: 8){
+        query Posts($id: ID!) {
+          posts1(id: $id){
           data{
             id
             attributes{
@@ -67,11 +67,11 @@ export default {
         }
         }
       `,
-      // variables() {
-      //   return {
-      //     id: this.routeParam
-      //   };
-      // }
+      variables() {
+        return {
+          id: this.currentId,
+        }
+      }
     }
   },
 };

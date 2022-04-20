@@ -32,6 +32,13 @@ export default {
             attributes{
               Title
               Text
+              image{
+                data{
+                  attributes{
+                    url
+                  }
+                }
+              }
               category{
                 data{
                   id

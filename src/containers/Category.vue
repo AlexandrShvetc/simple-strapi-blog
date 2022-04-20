@@ -44,6 +44,13 @@ export default {
                           attributes{
                             Text
                             Title
+                            image{
+                              data{
+                                attributes{
+                                  url
+                                }
+                              }
+                            }
                           }
                         }
                       }
