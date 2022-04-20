@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="container">
-    <Nav />
+    <Nav/>
     <router-view :key="$route.fullPath"></router-view>
   </div>
 </template>
@@ -14,12 +14,10 @@ export default {
 };
 </script>
 
-<style lang="css">
+<style>
 html,body {
   font-size: 18px;
 }
-
-
 
 a {
   text-decoration: none;

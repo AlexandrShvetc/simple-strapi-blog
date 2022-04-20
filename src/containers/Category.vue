@@ -1,12 +1,7 @@
 <template>
-  <div>
-    <div class="uk-section">
-      <div class="uk-container uk-container-large">
-        <h1>{{ category.name }}</h1>
-
-        <ArticlesList :articles="myCategory || []"></ArticlesList>
-      </div>
-    </div>
+  <div class="uk-container uk-container-large">
+    <h1>{{ category.data.attributes.title }}</h1>
+    <ArticlesList :articles="myCategory || []"></ArticlesList>
   </div>
 </template>
 

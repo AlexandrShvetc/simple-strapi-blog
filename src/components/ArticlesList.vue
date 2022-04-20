@@ -1,18 +1,18 @@
 <template>
   <div>
-    <h1>All articles</h1>
     <div class="row">
-      <router-link
-          v-for="article in articles.data"
-          :key="article.id"
-          :to="{ path: '/article/' + article.id }"
-          class="col-6 article-list-center"
-      >
-        <div>
-          <img :src="api_url + article.attributes.image.data[0].attributes.url" alt="image">
-          <p>{{ article.attributes.Title }}</p>
-        </div>
-      </router-link>
+      <div v-for="article in articles.data"
+           :key="article.id"
+           class="col-6 d-flex justify-content-center">
+        <router-link
+            :to="{ path: '/article/' + article.id }"
+        >
+          <div>
+            <img :src="api_url + article.attributes.image.data[0].attributes.url" alt="image">
+            <p>{{ article.attributes.Title }}</p>
+          </div>
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -47,17 +47,14 @@ export default {
 };
 </script>
 <style scoped>
-h1 {
-  font-size: 3rem;
-  line-height: 4rem;
-  font-weight: 700;
-  text-align: center;
-  margin-top: 60px;
-  margin-bottom: 40px;
+p {
+  margin-top: 20px;
+  margin-bottom: 60px;
 }
 
-.article-list-center:nth-child(odd) {
-  display: flex;
-  justify-content: flex-end;
+a {
+  color: #000000;
+  text-decoration: none;
+  text-align: center;
 }
 </style>

@@ -1,6 +1,7 @@
 <template>
   <div>
     <div>
+      <h1>All articles</h1>
       <ArticlesList :articles="posts"></ArticlesList>
     </div>
   </div>
@@ -51,3 +52,13 @@ export default {
   }
 };
 </script>
+<style>
+h1 {
+  font-size: 3rem;
+  line-height: 4rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+</style>
