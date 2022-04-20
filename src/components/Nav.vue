@@ -20,41 +20,54 @@
       </div>
     </nav>
 
-<!--    <nav class="uk-navbar-container" uk-navbar>-->
-<!--      <div class="uk-navbar-left">-->
-<!--        <ul class="uk-navbar-nav">-->
-<!--          <li>-->
-<!--            <a href="/">NORDIC ROSE</a>-->
-<!--          </li>-->
-<!--        </ul>-->
-<!--      </div>-->
+    <!--    <nav class="uk-navbar-container" uk-navbar>-->
+    <!--      <div class="uk-navbar-left">-->
+    <!--        <ul class="uk-navbar-nav">-->
+    <!--          <li>-->
+    <!--            <a href="/">NORDIC ROSE</a>-->
+    <!--          </li>-->
+    <!--        </ul>-->
+    <!--      </div>-->
 
-<!--      <div class="uk-navbar-right">-->
-<!--        <ul class="uk-navbar-nav">-->
+    <!--      <div class="uk-navbar-right">-->
+    <!--        <ul class="uk-navbar-nav">-->
 
-<!--        </ul>-->
-<!--      </div>-->
-<!--    </nav>-->
+    <!--        </ul>-->
+    <!--      </div>-->
+    <!--    </nav>-->
   </div>
 </template>
 
 <style scoped>
-.navbar{
-  color:#E6E6E6 ;
+.navbar {
+  color: #E6E6E6;
   border-bottom: 1px solid;
 }
-.navbar-collapse{
+
+.navbar-collapse {
   justify-content: flex-end;
 }
+
 .router-link-exact-active {
   border-bottom: 4px solid;
-  padding-bottom: 20px;
-;
-}
-.nav-link{
-font-size: 20px
+  padding-bottom: 20px;;
 }
 
+.nav-link {
+  font-size: 20px
+}
+
+@media (max-width: 991px) {
+  .router-link-exact-active {
+    border-bottom: none;
+    padding-bottom: 0;
+    color: #757575;
+  }
+
+  .navbar-nav {
+    align-items: center;
+  }
+}
 </style>
 
 <script>
