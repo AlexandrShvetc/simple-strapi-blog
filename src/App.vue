@@ -1,7 +1,10 @@
 <template>
-  <div id="app" class="container">
+  <div>
     <Nav/>
-    <router-view :key="$route.fullPath"></router-view>
+
+    <div id="app" class="container">
+      <router-view :key="$route.fullPath"></router-view>
+    </div>
   </div>
 </template>
 
@@ -10,12 +13,12 @@ import Nav from "./components/Nav.vue";
 
 export default {
   name: "App",
-  components: { Nav }
+  components: {Nav}
 };
 </script>
 
 <style>
-html,body {
+html, body {
   font-size: 18px;
 }
 

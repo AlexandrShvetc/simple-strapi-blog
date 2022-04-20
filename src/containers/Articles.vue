@@ -58,7 +58,7 @@ h1 {
   line-height: 4rem;
   font-weight: 700;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 100px;
   margin-bottom: 40px;
 }
 </style>
