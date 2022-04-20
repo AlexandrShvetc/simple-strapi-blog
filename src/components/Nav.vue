@@ -4,7 +4,7 @@
       <div class="uk-navbar-left">
         <ul class="uk-navbar-nav">
           <li>
-            <a href="/">Strapi Blog </a>
+            <a href="/">NORDIC ROSE</a>
           </li>
         </ul>
       </div>
@@ -24,6 +24,14 @@
     </nav>
   </div>
 </template>
+
+<style>
+a.router-link-active {
+  background: red;
+  border: black 1px !important;
+}
+
+</style>
 
 <script>
 import gql from "graphql-tag";
