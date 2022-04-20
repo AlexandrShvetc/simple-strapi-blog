@@ -15,13 +15,14 @@ export default {
 </script>
 
 <style lang="css">
-a {
-  text-decoration: none;
+html,body {
+  font-size: 18px;
 }
 
-h1 {
-  font-family: Staatliches;
-  font-size: 120px;
+
+
+a {
+  text-decoration: none;
 }
 
 #category {

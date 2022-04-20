@@ -1,25 +1,18 @@
 <template>
   <div>
+    <h1>All articles</h1>
     <div class="row">
       <router-link
           v-for="article in articles.data"
-          :to="{ path: '/article/' + article.id }"
-          class="uk-link-reset"
           :key="article.id"
+          :to="{ path: '/article/' + article.id }"
+          class="col-6 article-list-center"
       >
-        <div class="col-6">
-          <p>
-            <!--                id="category"-->
-            <!--                v-if="article.category"-->
-            <!--                class="uk-text-uppercase"-->
-            <!--              >-->
-            <!--                {{ article.attributes.category.data.attributes.title}}-->
-            <img :src="api_url + article.attributes.image.data[0].attributes.url" alt="">
-          </p>
-
-          <p><b>{{ article.attributes.Title }}</b></p>
-          </div>
-        </router-link>
+        <div>
+          <img :src="api_url + article.attributes.image.data[0].attributes.url" alt="image">
+          <p>{{ article.attributes.Title }}</p>
+        </div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -35,8 +28,21 @@ export default {
   props: {
     articles: {}
   },
-  computed: {
-
-  }
+  computed: {}
 };
 </script>
+<style scoped>
+h1 {
+  font-size: 3rem;
+  line-height: 4rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.article-list-center:nth-child(odd) {
+  display: flex;
+  justify-content: flex-end;
+}
+</style>
