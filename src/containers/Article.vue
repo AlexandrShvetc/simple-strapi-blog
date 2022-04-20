@@ -1,30 +1,12 @@
 <template>
   <div>
-    <p><b> {{ posts1.data.attributes.Title }}</b></p>
-    {{ posts1.data.attributes.Text }}
-    <img :src="api_url + posts1.data.attributes.image.data[0].attributes.url" alt="img">
-<!--    <div-->
-<!--      v-if="article.image"-->
-<!--      id="banner"-->
-<!--      class="uk-height-small uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding"-->
-<!--      :data-src="api_url + article.image.url"-->
-<!--      uk-img-->
-<!--    >-->
-<!--      <h1>{{ article.title }}</h1>-->
-<!--    </div>-->
-
-<!--    <div class="uk-section">-->
-<!--      <div class="uk-container uk-container-small">-->
-<!--        <vue-markdown-it-->
-<!--          v-if="article.content"-->
-<!--          :source="article.content"-->
-<!--          id="editor"-->
-<!--        />-->
-<!--        <p v-if="article.published_at">-->
-<!--          {{ moment(article.published_at).format("MMM Do YY") }}-->
-<!--        </p>-->
-<!--      </div>-->
-<!--    </div>-->
+    <h1> {{ posts1.data.attributes.Title }}</h1>
+    <div class="d-flex justify-content-center mb-5">
+      <img :src="api_url + posts1.data.attributes.image.data[0].attributes.url" alt="img">
+    </div>
+    <div class="col-8 m-auto">
+      <p>{{ posts1.data.attributes.Text }}</p>
+    </div>
   </div>
 </template>
 

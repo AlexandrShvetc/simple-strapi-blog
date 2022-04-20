@@ -53,8 +53,6 @@ p {
 }
 
 a {
-  color: #000000;
-  text-decoration: none;
   text-align: center;
 }
 </style>
