@@ -1,29 +1,25 @@
 <template>
   <div>
-    <div class="uk-child-width-1-2" uk-grid>
-      <div>
-        <router-link
+    <div class="row">
+      <router-link
           v-for="article in articles.data"
           :to="{ path: '/article/' + article.id }"
           class="uk-link-reset"
           :key="article.id"
-        >
-          <div class="uk-card uk-card-muted">
-            <div class="uk-card-body">
-              <p>
-<!--                id="category"-->
-<!--                v-if="article.category"-->
-<!--                class="uk-text-uppercase"-->
-<!--              >-->
-<!--                {{ article.attributes.category.data.attributes.title}}-->
-                <img :src="api_url + article.attributes.image.data[0].attributes.url" alt="">
-              </p>
-              
-              <p><b>{{ article.attributes.Title }}</b></p>
-            </div>
+      >
+        <div class="col-6">
+          <p>
+            <!--                id="category"-->
+            <!--                v-if="article.category"-->
+            <!--                class="uk-text-uppercase"-->
+            <!--              >-->
+            <!--                {{ article.attributes.category.data.attributes.title}}-->
+            <img :src="api_url + article.attributes.image.data[0].attributes.url" alt="">
+          </p>
+
+          <p><b>{{ article.attributes.Title }}</b></p>
           </div>
         </router-link>
-      </div>
     </div>
   </div>
 </template>

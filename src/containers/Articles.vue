@@ -1,11 +1,7 @@
 <template>
   <div>
-    <div class="uk-section">
-      <div class="uk-container uk-container-large">
-        <h1>Strapi blog</h1>
-
-        <ArticlesList :articles="posts"></ArticlesList>
-      </div>
+    <div>
+      <ArticlesList :articles="posts"></ArticlesList>
     </div>
   </div>
 </template>

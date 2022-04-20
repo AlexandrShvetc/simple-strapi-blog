@@ -1,13 +1,18 @@
-import Vue from "vue";
 import VueApollo from "vue-apollo";
 import apolloClient from "./vue-apollo";
 import VueRouter from "vue-router";
+import Vue from 'vue';
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
+
 
 import App from "./App.vue";
-
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.config.productionTip = false;
 Vue.use(VueApollo);
 Vue.use(VueRouter);
+Vue.use(BootstrapVue);
+Vue.use(IconsPlugin);
 
 const apolloProvider = new VueApollo({
   defaultClient: apolloClient
