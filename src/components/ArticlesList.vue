@@ -33,7 +33,22 @@ export default {
     };
   },
   props: {
-    articles: {}
+    articles: {
+      data: [{
+        id: '',
+        attributes: {
+          Text: '',
+          Title: '',
+          image: {
+            data: [{
+              attributes: {
+                url: '',
+              },
+            }],
+          },
+        },
+      }],
+    },
   },
   computed: {
 
