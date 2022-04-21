@@ -2,7 +2,7 @@
   <div>
     <h1> {{ posts1.data.attributes.Title }}</h1>
     <div class="d-flex justify-content-center mb-5">
-      <img :src="api_url + posts1.data.attributes.image.data[0].attributes.url" alt="img">
+      <img :src="api_url + posts1.data.attributes.image.data[0].attributes.url" alt="img" @error="errorImage">
     </div>
     <div class="col-8 m-auto">
       <p>{{ posts1.data.attributes.Text }}</p>
@@ -40,6 +40,12 @@ export default {
   },
   components: {
     // VueMarkdownIt
+  },
+  methods: {
+    errorImage( event ){
+      event.target.src = 'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png';
+      // console.clear();
+    }
   },
   apollo: {
     posts1: {
