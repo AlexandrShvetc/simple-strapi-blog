@@ -24,11 +24,11 @@ export default {
             Text: '',
             Title: '',
             image: {
-              data: [{
+              data: {
                 attributes: {
                   url: '',
                 },
-              }],
+              },
             },
           },
         },
