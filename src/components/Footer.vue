@@ -13,12 +13,12 @@
           egestas efficitur.
           In hac habitasse platea dictumst. Fusce a nunc eget ligula suscipit finibus.
         </div>
-        <div>
+        <div class="link_social_network_item mt-3">
           <a class="link_social_network" href="">Twitter</a>
           <a class="link_social_network" href="">LinkedIn</a>
           <a class="link_social_network" href="">RSS</a>
         </div>
-        <div class="text-center mt-5 md-5">© 2012–2020 Nordic Rose Co. All rights reserved.</div>
+        <div class="text-center mt-3 md-5">© 2012–2020 Nordic Rose Co. All rights reserved.</div>
       </div>
 
 
@@ -39,18 +39,31 @@ export default {
   color: white;
 
 }
-.text_decor{
+
+.text_decor {
   text-align: center;
 }
+
 .marquee {
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
 }
+
+.link_social_network_item {
+  display: flex;
+  justify-content: space-around
+}
+
+.link_social_network {
+  color: white;
+}
+
 .footer_info_item {
   margin: auto;
   width: 50%;
 }
+
 .footer_menu_item {
   word-spacing: 50px;
 }
