@@ -8,7 +8,7 @@
             :to="{ path: '/article/' + article.id }"
         >
           <div>
-            <img :src="api_url + article.attributes.image.data[0].attributes.url" alt="image" @error="errorImage">
+            <img :src="api_url + article.attributes.image.data.attributes.url" alt="image" @error="errorImage">
             <p>{{ article.attributes.Title }}</p>
           </div>
         </router-link>
