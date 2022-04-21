@@ -1,6 +1,23 @@
+html, body {
+    min-height: 100%;
+    height: 100%;
+}
+
+#app {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+.main_wrapper {
+    flex-grow: 1;
+    flex-basis: 100%;
+}
+
 a {
     color: #000000;
 }
+
 a:hover {
     color: #000000;
     text-decoration: none;

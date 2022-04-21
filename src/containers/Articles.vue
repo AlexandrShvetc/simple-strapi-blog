@@ -1,5 +1,10 @@
 <template>
   <div>
+    <div class="main-post">
+<!--      <h1>{{ posts.data[posts.data.length - 1].attributes.image.data.attributes }}</h1>-->
+<!--      <img :src="posts.data[posts.data.length-1].attributes.image.data.attributes.url" alt="img">-->
+      <!--      {{ posts.data[posts.data.length-1].attributes.image.data }}-->
+    </div>
     <div>
       <h1>All articles</h1>
       <ArticlesList :articles="posts"></ArticlesList>
@@ -60,5 +65,9 @@ h1 {
   text-align: center;
   margin-top: 100px;
   margin-bottom: 40px;
+}
+
+.main-post {
+  margin-top: 100px
 }
 </style>
