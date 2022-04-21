@@ -3,7 +3,7 @@
     <div class="row">
       <div v-for="article in articles.data"
            :key="article.id"
-           class="col-6 d-flex justify-content-center">
+           class="col-12 col-md-6 d-flex justify-content-center">
         <router-link
             :to="{ path: '/article/' + article.id }"
         >

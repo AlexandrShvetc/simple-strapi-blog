@@ -19,22 +19,6 @@
         </ul>
       </div>
     </nav>
-
-    <!--    <nav class="uk-navbar-container" uk-navbar>-->
-    <!--      <div class="uk-navbar-left">-->
-    <!--        <ul class="uk-navbar-nav">-->
-    <!--          <li>-->
-    <!--            <a href="/">NORDIC ROSE</a>-->
-    <!--          </li>-->
-    <!--        </ul>-->
-    <!--      </div>-->
-
-    <!--      <div class="uk-navbar-right">-->
-    <!--        <ul class="uk-navbar-nav">-->
-
-    <!--        </ul>-->
-    <!--      </div>-->
-    <!--    </nav>-->
   </div>
 </template>
 
@@ -42,6 +26,14 @@
 .navbar {
   color: #E6E6E6;
   border-bottom: 1px solid;
+  position: fixed;
+  z-index: 2;
+  background: #ffffff;
+  width: 100%;
+  padding: 10px 20px;
+  left: 0;
+  top: 0 ;
+
 }
 
 .navbar-collapse {
