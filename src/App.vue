@@ -1,12 +1,14 @@
 <template>
-  <div>
-    <Nav/>
-
-    <div id="app" class="container">
-      <router-view :key="$route.fullPath"></router-view>
+  <div class="h-100" id="app">
+    <div class="main_wrapper">
+      <Nav/>
+      <div id="app" class="container">
+        <router-view :key="$route.fullPath"></router-view>
+      </div>
     </div>
     <Footer/>
   </div>
+
 </template>
 
 <script>
@@ -15,7 +17,7 @@ import Footer from "./components/Footer";
 
 export default {
   name: "App",
-  components: {Nav,Footer}
+  components: {Nav, Footer}
 };
 </script>
 
