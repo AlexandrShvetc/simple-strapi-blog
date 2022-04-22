@@ -55,13 +55,18 @@ export default {
   },
   computed: {
     rows() {
-      return this.articles.data.length
+      return this.articles.data.length-1
     },
     itemsForList() {
-      return this.articles.data.slice(
+      const newArray = this.articles.data.slice(0, this.articles.data.length - 1)
+      return newArray.slice(
           (this.currentPage - 1) * this.perPage,
           this.currentPage * this.perPage,
       );
+      // return this.articles.data.slice(
+      //     (this.currentPage - 1) * this.perPage,
+      //     this.currentPage * this.perPage,
+      // );
     }
   },
   methods: {

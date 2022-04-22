@@ -23,8 +23,8 @@
 </template>
 
 <style scoped>
-.shadow {
-  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+.shadow-my {
+  box-shadow: 0 0.1rem 0.5rem rgb(0 0 0 / 15%);
 }
 .navbar {
   color: #E6E6E6;
@@ -97,9 +97,9 @@ export default {
       window.addEventListener('scroll', () => {
         const nav = document.getElementById('nav')
         if(window.scrollY > 40)
-          nav.classList.add('shadow')
+          nav.classList.add('shadow-my')
         else
-          nav.classList.remove('shadow')
+          nav.classList.remove('shadow-my')
       })
     },
   },

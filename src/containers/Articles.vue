@@ -1,10 +1,14 @@
 <template>
   <div>
     <div class="main-post">
+      <router-link
+          :to="{ path: '/article/' + createdAt.id }"
+      >
       <h1>{{ createdAt.attributes.Title }}</h1>
       <div>
         <img :src="api_url + createdAt.attributes.image.data.attributes.url" alt="img">
       </div>
+      </router-link>>
       <!--      {{ posts.data[posts.data.length-1].attributes.image.data }}-->
     </div>
     <div>
