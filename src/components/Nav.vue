@@ -100,7 +100,6 @@ export default {
           nav.classList.add('shadow')
         else
           nav.classList.remove('shadow')
-        console.log(window.scrollY)
       })
     },
   },
