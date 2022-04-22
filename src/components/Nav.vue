@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <nav class="navbar navbar-expand-lg navbar-light ">
+  <div >
+    <nav id="nav" class="navbar navbar-expand-lg navbar-light">
       <a class="navbar-brand" href="/">NORDIC ROSE</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
               aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,6 +23,9 @@
 </template>
 
 <style scoped>
+.shadow {
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+}
 .navbar {
   color: #E6E6E6;
   border-bottom: 1px solid;
@@ -33,7 +36,7 @@
   padding: 10px 20px;
   left: 0;
   top: 0 ;
-
+  transition: 0.5s;
 }
 
 .navbar-collapse {
@@ -74,17 +77,32 @@ export default {
   },
   apollo: {
     categories: gql`
-query Categories{
-categories {
-  data {
-    id
-    attributes{
-      title
-    }
-  }
-}
-}
+      query Categories{
+      categories {
+        data {
+          id
+          attributes{
+            title
+          }
+        }
+      }
+      }
     `
-  }
+  },
+  created() {
+    this.myShadowListener()
+  },
+  methods: {
+    myShadowListener(){
+      window.addEventListener('scroll', () => {
+        const nav = document.getElementById('nav')
+        if(window.scrollY > 40)
+          nav.classList.add('shadow')
+        else
+          nav.classList.remove('shadow')
+        console.log(window.scrollY)
+      })
+    },
+  },
 };
 </script>

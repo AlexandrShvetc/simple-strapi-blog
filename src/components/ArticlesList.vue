@@ -1,7 +1,8 @@
 <template>
   <div>
-    <div class="row">
-      <div v-for="article in articles.data"
+    <div class="row" id="my-table">
+      <div v-for="article in itemsForList"
+
            :key="article.id"
            class="col-12 col-md-6 d-flex justify-content-center">
         <router-link
@@ -14,6 +15,13 @@
         </router-link>
       </div>
     </div>
+    <b-pagination
+        v-model="currentPage"
+        :total-rows="rows"
+        :per-page="perPage"
+        aria-controls="my-table"
+        align="center"
+    ></b-pagination>
   </div>
 </template>
 
@@ -21,6 +29,8 @@
 export default {
   data: function() {
     return {
+      perPage: 4,
+      currentPage: 1,
       api_url: process.env.VUE_APP_STRAPI_API_URL || "https://cheapdeep-strapiblog.herokuapp.com",
       state: process.env.NODE_ENV
     };
@@ -43,11 +53,23 @@ export default {
       }],
     },
   },
+  computed: {
+    rows() {
+      return this.articles.data.length
+    },
+    itemsForList() {
+      return this.articles.data.slice(
+          (this.currentPage - 1) * this.perPage,
+          this.currentPage * this.perPage,
+      );
+    }
+  },
   methods: {
     errorImage( event ){
       event.target.src = 'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png';
       // console.clear();
-    }
+    },
+
   },
 };
 </script>

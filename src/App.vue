@@ -2,7 +2,7 @@
   <div class="h-100" id="app">
     <div class="main_wrapper">
       <Nav/>
-      <div id="app" class="container">
+      <div class="container">
         <router-view :key="$route.fullPath"></router-view>
       </div>
     </div>
