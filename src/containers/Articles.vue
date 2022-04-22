@@ -1,8 +1,10 @@
 <template>
   <div>
     <div class="main-post">
-<!--      <h1>{{ posts.data[posts.data.length - 1].attributes.image.data.attributes }}</h1>-->
-<!--      <img :src="posts.data[posts.data.length-1].attributes.image.data.attributes.url" alt="img">-->
+      <h1>{{ createdAt.attributes.Title }}</h1>
+      <div>
+        <img :src="api_url + createdAt.attributes.image.data.attributes.url" alt="img">
+      </div>
       <!--      {{ posts.data[posts.data.length-1].attributes.image.data }}-->
     </div>
     <div>
@@ -22,16 +24,47 @@ export default {
   },
   data() {
     return {
-      posts: []
+      posts: {
+        data: [{
+          id: '',
+          attributes: {
+            Text: '',
+            Title: '',
+            createdAt: '',
+            image: {
+              data: {
+                attributes: {
+                  url: '',
+                },
+              },
+            },
+            category: {
+              data: {
+                attributes: {
+                  title: '',
+                },
+              },
+            },
+          },
+        }],
+      },
+      api_url: process.env.VUE_APP_STRAPI_API_URL || "https://cheapdeep-strapiblog.herokuapp.com",
     };
+  },
+  computed: {
+    createdAt() {
+      let localLength = this.posts.data.length
+      return this.posts.data[localLength - 1]
+    },
   },
   apollo: {
     posts: gql`
       query Articles {
-        posts{
+        posts(sort: "createdAt"){
           data{
             id
             attributes{
+              createdAt
               Title
               Text
               image{
