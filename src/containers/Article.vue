@@ -18,13 +18,13 @@
         </div>
       </div>
     </div>
-    <div>
-      <div v-for="post in posts1.data.attributes.category.data.attributes.posts.data" :key="post">
-        <div v-if="post.id !== currentId">
-          <p>{{post.attributes.Title}}</p>
-        </div>
-      </div>
-    </div>
+<!--    <div>-->
+<!--      <div v-for="post in posts1.data.attributes.category.data.attributes.posts.data" :key="post.id">-->
+<!--        <div v-if="post.id !== currentId">-->
+<!--          <p>{{post.attributes.Title}}</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </template>
 
@@ -40,27 +40,27 @@ export default {
       posts1: {
         data: {
           attributes: {
-            category: {
-              data: {
-                attributes: {
-                  posts: {
-                    data: [{
-                      id: '',
-                      attributes: {
-                        Title: '',
-                        image: {
-                          data: {
-                            attributes: {
-                              url: '',
-                            },
-                          },
-                        },
-                      },
-                    }],
-                  },
-                },
-              },
-            },
+            // category: {
+            //   data: {
+            //     attributes: {
+            //       posts: {
+            //         data: [{
+            //           id: '',
+            //           attributes: {
+            //             Title: '',
+            //             image: {
+            //               data: {
+            //                 attributes: {
+            //                   url: '',
+            //                 },
+            //               },
+            //             },
+            //           },
+            //         }],
+            //       },
+            //     },
+            //   },
+            // },
             Text: '',
             Title: '',
             image: {
