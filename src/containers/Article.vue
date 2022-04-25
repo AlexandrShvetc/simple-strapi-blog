@@ -21,15 +21,12 @@
     <div class="what-read">
       <h2>What to read next</h2>
       <div class="row">
-        <div v-for="post in posts1.data.attributes.category.data.attributes.posts.data" :key="post.id"
+        <div v-for="post in postsArray" :key="post.id"
              class="col-4 text-center">
-          <div v-if="post.id !== currentId">
-            <router-link :to="{ path: '/article/' + post.id }">
-              <img :src="api_url + post.attributes.image.data.attributes.url" alt="image">
-              <p>{{ post.attributes.Title }}</p>
-            </router-link>
-          </div>
-
+          <router-link :to="{ path: '/article/' + post.id }">
+            <img :src="api_url + post.attributes.image.data.attributes.url" alt="image">
+            <p>{{ post.attributes.Title }}</p>
+          </router-link>
         </div>
       </div>
     </div>
@@ -106,6 +103,9 @@ export default {
   computed: {
     myImage() {
       return faker.image.avatar()
+    },
+    postsArray() {
+      return this.posts1.data.attributes.category.data.attributes.posts.data.filter(post => post.id !== this.currentId)
     },
   },
   methods: {
