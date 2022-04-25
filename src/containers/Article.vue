@@ -20,7 +20,7 @@
     </div>
     <div>
       <div v-for="post in posts1.data.attributes.category.data.attributes.posts.data" :key="post">
-        <div v-if="post.data.id !== currentId">
+        <div v-if="post.id !== currentId">
           <p>{{post.attributes.Title}}</p>
         </div>
       </div>
@@ -40,6 +40,27 @@ export default {
       posts1: {
         data: {
           attributes: {
+            category: {
+              data: {
+                attributes: {
+                  posts: {
+                    data: [{
+                      id: '',
+                      attributes: {
+                        Title: '',
+                        image: {
+                          data: {
+                            attributes: {
+                              url: '',
+                            },
+                          },
+                        },
+                      },
+                    }],
+                  },
+                },
+              },
+            },
             Text: '',
             Title: '',
             image: {
