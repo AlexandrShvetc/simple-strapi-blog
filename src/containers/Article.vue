@@ -18,10 +18,18 @@
         </div>
       </div>
     </div>
-    <div>
-      <div v-for="post in posts1.data.attributes.category.data.attributes.posts.data" :key="post">
-        <div v-if="post.id !== currentId">
-          <p>{{post.attributes.Title}}</p>
+    <div class="what-read">
+      <h2>What to read next</h2>
+      <div class="row">
+        <div v-for="post in posts1.data.attributes.category.data.attributes.posts.data" :key="post.id"
+             class="col-4 text-center">
+          <div v-if="post.id !== currentId">
+            <router-link :to="{ path: '/article/' + post.id }">
+              <img :src="api_url + post.attributes.image.data.attributes.url" alt="image">
+              <p>{{ post.attributes.Title }}</p>
+            </router-link>
+          </div>
+
         </div>
       </div>
     </div>
@@ -211,6 +219,20 @@ img {
 
 .comment {
   padding: 10px;
+}
+
+.what-read {
+  margin-top: 60px;
+}
+
+.what-read h2 {
+  text-align: center;
+  border-top: 2px solid #000000;
+  padding: 40px 0;
+}
+
+.what-read p {
+  margin-top: 20px;
 }
 
 @media (max-width: 576px) {
