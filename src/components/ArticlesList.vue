@@ -26,12 +26,13 @@
 
 <script>
 export default {
-  data: function() {
+  data: function () {
     return {
       perPage: 4,
       currentPage: 1,
       api_url: process.env.VUE_APP_STRAPI_API_URL || "https://cheapdeep-strapiblog.herokuapp.com",
-      state: process.env.NODE_ENV
+      state: process.env.NODE_ENV,
+      // newArray: [],
     };
   },
   props: {
@@ -54,22 +55,22 @@ export default {
   },
   computed: {
     rows() {
-      return this.articles.data.length-1
+      return this.articles.data.length - 1
     },
     itemsForList() {
-      const newArray = this.articles.data.slice(0, this.articles.data.length - 1)
+      let newArray = []
+      if (this.$route.params.id === undefined)
+        newArray = this.articles.data.slice(0, this.articles.data.length - 1)
+      else
+        newArray = this.articles.data;
       return newArray.slice(
           (this.currentPage - 1) * this.perPage,
           this.currentPage * this.perPage,
       );
-      // return this.articles.data.slice(
-      //     (this.currentPage - 1) * this.perPage,
-      //     this.currentPage * this.perPage,
-      // );
     }
   },
   methods: {
-    errorImage( event ){
+    errorImage(event) {
       event.target.src = 'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png';
       // console.clear();
     },
