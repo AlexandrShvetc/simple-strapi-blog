@@ -132,7 +132,7 @@ img {
 
 .comments-block {
   max-height: 300px;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 
