@@ -18,6 +18,13 @@
         </div>
       </div>
     </div>
+    <div>
+      <div v-for="post in posts1.data.attributes.category.data.attributes.posts.data" :key="post">
+        <div v-if="post.data.id !== currentId">
+          <p>{{post.attributes.Title}}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -70,7 +77,7 @@ export default {
   computed: {
     myImage() {
       return faker.image.avatar()
-    }
+    },
   },
   methods: {
     errorImage(event) {
