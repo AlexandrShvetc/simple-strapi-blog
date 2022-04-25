@@ -7,13 +7,15 @@
     <div class="col-10 post-text">
       <p>{{ posts1.data.attributes.Text }}</p>
     </div>
-    <div v-for="comment in posts1.data.attributes.comments.data" :key="comment.id" class="comments row">
-      <div class="col-3 author">
-        <img :src="myImage" alt="12">
-        <h5>{{ comment.attributes.author.data.attributes.NickName }}</h5>
-      </div>
-      <div class="col-9 comment">
-        <p>{{ comment.attributes.Comment }}</p>
+    <div class="comments-block">
+      <div v-for="comment in posts1.data.attributes.comments.data" :key="comment.id" class="comments row">
+        <div class="col-sm-3 col-12 author">
+          <img :src="myImage" alt="12">
+          <h5>{{ comment.attributes.author.data.attributes.NickName }}</h5>
+        </div>
+        <div class="col-sm-9 col-12 comment">
+          <p>{{ comment.attributes.Comment }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -128,6 +130,12 @@ img {
   width: 100%;
 }
 
+.comments-block {
+  max-height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 .post-text {
   margin: 40px auto;
 }
@@ -145,7 +153,20 @@ img {
   padding: 10px;
 }
 
+.author img {
+  width: 100px;
+  max-width: 100%;
+  float: left;
+  margin-right: 10px;
+}
+
 .comment {
   padding: 10px;
+}
+
+@media (max-width: 576px) {
+  .author {
+    border-right: none;
+  }
 }
 </style>
