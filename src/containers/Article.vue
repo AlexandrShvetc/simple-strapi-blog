@@ -88,6 +88,27 @@ export default {
             attributes{
               Text
               Title
+              category{
+                data{
+                  attributes{
+                    posts{
+                      data{
+                        id
+                        attributes{
+                          Title
+                          image{
+                            data{
+                              attributes{
+                                url
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
               comments{
                 data{
                   id
