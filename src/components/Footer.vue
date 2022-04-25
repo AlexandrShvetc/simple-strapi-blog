@@ -37,7 +37,7 @@ export default {
   background: black;
   padding-bottom: 40px;
   color: white;
-
+  margin-top: 60px;
 }
 
 .text_decor {

@@ -9,6 +9,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@faker-js/faker": "^6.2.0",
     "apollo-cache-inmemory": "^1.6.5",
     "apollo-client": "^2.6.8",
     "apollo-link": "^1.2.13",
@@ -16,6 +17,7 @@
     "bootstrap": "^4.6.1",
     "bootstrap-vue": "^2.22.0",
     "core-js": "^3.6.4",
+    "faker": "^6.6.6",
     "graphql": "^14.6.0",
     "graphql-tag": "^2.10.3",
     "jquery": "^3.6.0",

@@ -2,7 +2,6 @@
   <div>
     <div class="row" id="my-table">
       <div v-for="article in itemsForList"
-
            :key="article.id"
            class="col-12 col-md-6 d-flex justify-content-center">
         <router-link
