@@ -8,7 +8,7 @@
       <div>
         <img :src="api_url + createdAt.attributes.image.data.attributes.url" alt="img">
       </div>
-      </router-link>>
+      </router-link>
       <!--      {{ posts.data[posts.data.length-1].attributes.image.data }}-->
     </div>
     <div>

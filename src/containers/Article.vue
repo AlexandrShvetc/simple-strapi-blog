@@ -57,6 +57,22 @@ export default {
             attributes{
               Text
               Title
+              comments{
+                data{
+                  id
+                  attributes{
+                    author{
+                      data{
+                        id
+                        attributes{
+                          NickName
+                        }
+                      }
+                    }
+                    Comment
+                  }
+                }
+              }
               image{
                 data{
                   attributes{
