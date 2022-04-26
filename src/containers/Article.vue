@@ -38,6 +38,7 @@
 // import VueMarkdownIt from "vue-markdown-it";
 import gql from "graphql-tag";
 import {faker} from '@faker-js/faker';
+// import apolloClient from "@/vue-apollo";
 
 export default {
   data() {
@@ -95,9 +96,13 @@ export default {
         },
       },
       // moment: moment,
+      alternativePost: {},
       api_url: process.env.VUE_APP_STRAPI_API_URL || "https://cheapdeep-strapiblog.herokuapp.com",
       currentId: this.$route.params.id,
     };
+  },
+  mounted() {
+    // this.getData()
   },
   components: {},
   computed: {
@@ -111,8 +116,75 @@ export default {
   methods: {
     errorImage(event) {
       event.target.src = 'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png';
-      // console.clear();
     },
+    // async getData() {
+    //   const request = apolloClient => apolloClient
+    //       .query({
+    //         query: gql`
+    //     query Posts {
+    //       posts1(id: ${this.currentId}){
+    //       data{
+    //         id
+    //         attributes{
+    //           Text
+    //           Title
+    //           category{
+    //             data{
+    //               id
+    //               attributes{
+    //                 posts{
+    //                   data{
+    //                     id
+    //                     attributes{
+    //                       Title
+    //                       image{
+    //                         data{
+    //                           attributes{
+    //                             url
+    //                           }
+    //                         }
+    //                       }
+    //                     }
+    //                   }
+    //                 }
+    //               }
+    //             }
+    //           }
+    //           comments{
+    //             data{
+    //               id
+    //               attributes{
+    //                 author{
+    //                   data{
+    //                     id
+    //                     attributes{
+    //                       NickName
+    //                     }
+    //                   }
+    //                 }
+    //                 Comment
+    //               }
+    //             }
+    //           }
+    //           image{
+    //             data{
+    //               attributes{
+    //                 url
+    //               }
+    //             }
+    //           }
+    //         }
+    //       }
+    //     }
+    //     }
+    //   `,
+    //       })
+    //
+    //   const response = await request(apolloClient);
+    //   this.alternativePost = await response;
+    //   console.log(await response);
+    //   this.posts1 = await this.alternativePost.data.posts1
+    // },
   },
   apollo: {
     posts1: {
@@ -126,6 +198,7 @@ export default {
               Title
               category{
                 data{
+                  id
                   attributes{
                     posts{
                       data{
