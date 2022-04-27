@@ -1,24 +1,23 @@
 <template>
-  <div >
-    <nav id="nav" class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="/">NORDIC ROSE</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-              aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item nav-link active" v-for="category in categories.data" v-bind:key="category.id">
-            <router-link
-                :to="{ path: '/category/' + category.id }"
-                :key="category.id"
-            >
-              {{ category.attributes.title }}
-            </router-link>
-          </li>
-        </ul>
-      </div>
-    </nav>
+  <div>
+    <b-navbar id="nav" class="navbar" toggleable="lg">
+      <b-navbar-brand href="/">NORDIC ROSE</b-navbar-brand>
+      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+      <b-collapse id="nav-collapse" is-nav>
+        <b-navbar-nav>
+          <ul class="navbar-nav">
+            <li v-for="category in categories.data" v-bind:key="category.id" class="nav-item nav-link active">
+              <router-link
+                  :key="category.id"
+                  :to="{ path: '/category/' + category.id }"
+              >
+                {{ category.attributes.title }}
+              </router-link>
+            </li>
+          </ul>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
   </div>
 </template>
 
@@ -26,6 +25,7 @@
 .shadow-my {
   box-shadow: 0 0.1rem 0.5rem rgb(0 0 0 / 15%);
 }
+
 .navbar {
   color: #E6E6E6;
   border-bottom: 1px solid;
@@ -72,7 +72,8 @@ export default {
   name: "Nav",
   data() {
     return {
-      categories: []
+      categories: [],
+      isActive: false,
     };
   },
   apollo: {
@@ -93,10 +94,10 @@ export default {
     this.myShadowListener()
   },
   methods: {
-    myShadowListener(){
+    myShadowListener() {
       window.addEventListener('scroll', () => {
         const nav = document.getElementById('nav')
-        if(window.scrollY > 40)
+        if (window.scrollY > 40)
           nav.classList.add('shadow-my')
         else
           nav.classList.remove('shadow-my')

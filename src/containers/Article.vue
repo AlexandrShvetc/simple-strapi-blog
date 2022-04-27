@@ -262,8 +262,6 @@ img {
 
 .comments-block {
   max-height: 300px;
-  overflow-y: auto;
-  overflow-x: hidden;
 }
 
 .post-text {
