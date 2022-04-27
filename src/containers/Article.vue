@@ -23,7 +23,7 @@
       <div class="row">
         <div v-for="post in postsArray" :key="post.id"
              class="col-4 text-center">
-          <router-link :to="{ path: '/article/' + post.id }">
+          <router-link :to="{ path: '/article/' + post.id }" @click.native="scrollToTop">
             <img :src="api_url + post.attributes.image.data.attributes.url" alt="image">
             <p>{{ post.attributes.Title }}</p>
           </router-link>
@@ -116,6 +116,9 @@ export default {
   methods: {
     errorImage(event) {
       event.target.src = 'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png';
+    },
+    scrollToTop() {
+      window.scrollTo(0,0);
     },
     // async getData() {
     //   const request = apolloClient => apolloClient
